@@ -1,3 +1,4 @@
+//this code is of serial testing
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 
@@ -11,13 +12,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 
-public class NewTest {
+public class SerialTest {
 	@BeforeTest
 	public void Setup() {
 		System.out.println("Tests Run Started ");
 	}
 
-	@Test
+	@Test(priority=2)
 	public void Test1() {
 		System.out.println("Running Test1");
 		String kobitonServerUrl = "https://gyanadeeps:15a9ea3f-38fb-450c-9706-08a72ed71950@api.kobiton.com/wd/hub";
@@ -73,6 +74,13 @@ public class NewTest {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 			WebElement two = driver.findElement(By.xpath("//android.widget.EditText[@text='Write a task']"));
 			two.click();
+			
+			two.sendKeys("Abcd");
+			
+			WebElement done = driver.findElement(By.xpath("//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView"));
+			done.click();
+			done.click();
+			TimeUnit.SECONDS.sleep(5);
 			// util.GetLogs(driver);
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		}
@@ -85,7 +93,7 @@ public class NewTest {
 		driver.quit();
 	}
 
-	@Test
+	@Test(priority=1)
 	void Test2 (){
 		System.out.println("Running Test2");
 		String kobitonServerUrl = "https://gyanadeeps:15a9ea3f-38fb-450c-9706-08a72ed71950@api.kobiton.com/wd/hub";
@@ -121,6 +129,12 @@ public class NewTest {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 			WebElement two = driver.findElement(By.xpath("//android.widget.EditText[@text='Write a task']"));
 			two.click();
+			two.sendKeys("Abcd");
+			
+			WebElement done = driver.findElement(By.xpath("//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView"));
+			done.click();
+			done.click();
+			TimeUnit.SECONDS.sleep(5);
 			// util.GetLogs(driver);
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		}

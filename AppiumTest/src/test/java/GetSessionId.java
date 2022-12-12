@@ -13,11 +13,11 @@ public class GetSessionId {
 
 	public static void main(String[] args) {
 		
-		iOSsession();
+		createSession();
 
 	}
 
-	public static void iOSsession() {
+	public static void createSession() {
 
 		
 		String kobitonServerUrl = "https://gyanadeeps:15a9ea3f-38fb-450c-9706-08a72ed71950@api.kobiton.com/wd/hub";
@@ -56,8 +56,5 @@ public class GetSessionId {
 			
 			e.printStackTrace();
 		}
-		
-
 	}
-
 }
